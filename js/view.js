@@ -26,7 +26,6 @@ export function renderPosts(posts) {
     const li = document.createElement("li");
     li.textContent = post.title;
 
-    // clicar no post carrega comentários
     li.onclick = () => import("./controller.js").then(m => m.loadComments(post.id));
 
     list.appendChild(li);
