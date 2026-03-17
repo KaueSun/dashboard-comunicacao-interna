@@ -3,13 +3,11 @@ export function renderUsers(users) {
   const list = document.getElementById("users");
   list.innerHTML = "";
 
-  // limitar para 4 usuários
   users.slice(0, 4).forEach(user => {
 
     const li = document.createElement("li");
     li.textContent = user.name;
 
-    // clicar no usuário carrega posts
     li.onclick = () => import("./controller.js").then(m => m.loadPosts(user.id));
 
     list.appendChild(li);
